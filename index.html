@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Redirecionando para o WhatsApp...</title>
+
+  <!-- Global site tag (gtag.js) - Google Ads -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-XXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'AW-XXXXXXX'); // Substitua aqui também
+  </script>
+
+  <!-- Evento de conversão -->
+  <script>
+    function gtag_report_conversion(url) {
+      var callback = function () {
+        if (typeof(url) != 'undefined') {
+          window.location = url;
+        }
+      };
+      gtag('event', 'conversion', {
+        'send_to': 'AW-XXXXXXX/YYYYYYYY', // Substitua aqui
+        'event_callback': callback
+      });
+      return false;
+    }
+
+    // Chama o evento e redireciona
+    window.onload = function() {
+      gtag_report_conversion("https://wa.me/5537998046493?text=Ol%C3%A1!%20Quero%20fazer%20uma%20avalia%C3%A7%C3%A3o");
+    };
+  </script>
+</head>
+<body>
+  <p style="text-align:center; font-family:Arial; margin-top:20%;">
+    Você está sendo redirecionado para o WhatsApp...
+  </p>
+</body>
+</html>
